@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Killian Jeuffroy</title>
+    <link rel="stylesheet" href="frontoffice/asset/css/app.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="frontoffice/asset/js/tailwindcss.config.js"></script>
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://killianx45.github.io/portfolio_web2024/"
+    />
+    <meta
+      name="description"
+      content="Portfolio de Killian Jeuffroy, développeur web. Découvrez mes compétences, mes projets et contactez moi pour discuter de votre projet."
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="frontoffice/asset/img/logo.webp"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="preload" href="frontoffice/asset/img/logo.webp" as="image" />
+    <link
+      rel="preload"
+      href="frontoffice/asset/img/pp_killian_semi.webp"
+      as="image"
+    />
+    <link rel="preload" href="frontoffice/asset/css/app.css" as="style" />
+  </head>
+  <body class="bg-backgroundColor dark:bg-backgroundColor text-white">
+    <header id="home" class="h-screen">
+      <nav
+        class="bg-backgroundColor border border-gray-700 rounded-full max-w-4xl mx-auto mt-8 text-white fixed top-0 left-1/2 transform -translate-x-1/2 w-11/12 z-50"
+        id="navbar"
+      >
+        <div
+          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2"
+        >
+          <a
+            href="#home"
+            class="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <img
+              src="frontoffice/asset/img/logo.webp"
+              class="h-8"
+              alt="Logo de Killian Jeuffroy"
+              loading="eager"
+            />
+            <span
+              class="self-center text-xl md:text-2xl font-semibold whitespace-nowrap color-degrader"
+              >killian.jeuffroy</span
+            >
+          </a>
+          <div
+            class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
+          >
+            <button
+              data-collapse-toggle="navbar-cta"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="navbar-cta"
+              aria-expanded="false"
+              onclick="toggleNavbar()"
+            >
+              <span class="sr-only">Ouvrir le menu</span>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            id="navbar-cta"
+          >
+            <ul
+              class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-700 rounded-lg bg-backgroundColor md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-backgroundColor text-white"
+            >
+              <li>
+                <a
+                  href="#home"
+                  class="block py-2 px-3 md:p-0 text-white bg-orangeColor rounded md:bg-transparent md:text-orangeColor md:dark:text-orangeColor-dark"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orangeColor md:dark:hover:text-orangeColor-dark dark:text-white dark:hover:bg-gray-700 dark:hover:text-orangeColor md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Qui suis-je ?</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projets"
+                  class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orangeColor md:dark:hover:text-orangeColor-dark dark:text-white dark:hover:bg-gray-700 dark:hover:text-orangeColor md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Réalisations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#outils"
+                  class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orangeColor md:dark:hover:text-orangeColor-dark dark:text-white dark:hover:bg-gray-700 dark:hover:text-orangeColor md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Mes outils</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="block py-2 px-3 md:p-0 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orangeColor md:dark:hover:text-orangeColor-dark dark:text-white dark:hover:bg-gray-700 dark:hover:text-orangeColor md:dark:hover:bg-transparent dark:border-gray-700"
+                  >Prenez contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="flex flex-col items-center justify-center h-screen background-pattern"
+      >
+        <h1
+          class="text-3xl text-white text-center p-8 md:text-6xl md:w-[70%] scroll-item opacity-0 translate-y-10 transition duration-1000 ease-in-out"
+        >
+          <em>Optimisez vos plateformes avec</em> ✦ des applications back-end
+          fiables. Un développeur passionné, <em>prêt à relever</em> vos défis
+          numériques.
+        </h1>
+        <p
+          class="text-gray-300 text-center text-xs mt-4 px-4 w-[70%] scroll-item opacity-0 translate-y-10 transition duration-700 ease-out"
+        >
+          En recherche de stage de 11 semaines dès le 7 avril 2025.
+        </p>
+        <div class="flex flex-col items-center justify-center mt-4">
+          <a href="#projets">
+            <button
+              class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+            >
+              Voir mes réalisations
+              <svg
+                class="arrow-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="7" x2="17" y2="17"></line>
+                <polyline points="17 7 17 17 7 17"></polyline>
+              </svg>
+            </button>
+          </a>
+          <a
+            href="frontoffice/asset/img/cv_jeuffroy_killian.pdf"
+            download="cv_jeuffroy_killian.pdf"
+            class="btn-black border border-gray-700 text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon mt-4"
+          >
+            Télécharger mon CV
+            <svg
+              class="arrow-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="7" y1="7" x2="17" y2="17"></line>
+              <polyline points="17 7 17 17 7 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <article class="container mx-auto p-4">
+        <section
+          id="about"
+          class="flex flex-col items-center justify-center h-screen"
+        >
+          <h2
+            class="text-2xl text-white text-center md:text-4xl scroll-item opacity-0 translate-y-10 transition duration-1200 ease-in-out"
+          >
+            Qui suis-je ?
+          </h2>
+          <div
+            class="flex flex-col items-center justify-center mt-8 md:flex-row scroll-item opacity-0 translate-y-10 transition duration-1000 ease-in-out"
+          >
+            <p
+              class="text-white text-center text-sm mt-4 px-4 md:w-1/2 md:text-lg"
+            >
+              Bonjour, je suis Killian JEUFFROY, <em>développeur web</em> de 20
+              ans, passionné par les nouvelles technologies et le backend.
+              Actuellement en 2ᵉ année à l'IUT de Blois, mes projets académiques
+              et personnels m'ont permis de développer des compétences solides.
+              Je recherche un
+              <em>stage de 11 semaines dès le 7 avril 2025</em> pour contribuer
+              à des projets ambitieux et continuer à progresser.
+            </p>
+            <img
+              src="frontoffice/asset/img/pp_killian_semi.webp"
+              alt="Photo de moi me répresentant"
+              class="w-1/2 mt-4 md:h-[500px] md:w-1/3 md:object-cover md:hover:border md:hover:border-orangeColor"
+              loading="eager"
+            />
+          </div>
+        </section>
+
+        <section
+          id="projets"
+          aria-labelledby="section-projets"
+          class="mt-8 h-screen"
+        >
+          <h3
+            id="section-projets"
+            class="text-sm text-center mt-4 text-white md:text-2xl"
+          >
+            Découvrez mon parcours en code
+          </h3>
+
+          <div class="relative w-full h-[400px] overflow-hidden md:h-[600px]">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="rotating-container">
+                <img
+                  src="frontoffice/asset/img/judo.webp"
+                  alt="Site projet judo"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/cinetheque_react.webp"
+                  alt="Site projet cinémathèque"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/tendance-or-not.webp"
+                  alt="Site projet tendance or not"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/snake.webp"
+                  alt="Site projet snake"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/blog_symfony.webp"
+                  alt="Site projet blog"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/stopwatch.webp"
+                  alt="Site projet chronomètre"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/judo.webp"
+                  alt="Site projet judo"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/cinetheque_react.webp"
+                  alt="Site projet cinémathèque"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/snake.webp"
+                  alt="Site projet snake"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/blog_symfony.webp"
+                  alt="Site projet blog"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+                <img
+                  src="frontoffice/asset/img/stopwatch.webp"
+                  alt="Site projet chronomètre"
+                  class="project-image rotating-image"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="popup">
+            <span class="popup-close text-white">&times;</span>
+            <div class="content-popup">
+              <video
+                src="frontoffice/asset/videos/blog_symfony_video.webm"
+                autoplay
+              ></video>
+              <div class="text-popup">
+                <h4 class="text-white">Site de Judo</h4>
+                <p class="text-white">
+                  Site de Judo réalisé en HTML, CSS et JavaScript. Ce site a été
+                  réalisé dans le cadre de ma formation en développement web.
+                </p>
+                <a
+                  class="link-projet text-white"
+                  href="https://killianx45.github.io/website_ascoux_judoclub/"
+                  target="_blank"
+                  aria-label="Site de Judo"
+                  rel="noopener"
+                  >Voir le projet</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="outils"
+          class="flex flex-col items-center justify-center mt-4"
+        >
+          <h3 id="section-outils" class="text-2xl text-center text-white">
+            Des compétences solides et adaptées à vos projets
+          </h3>
+          <p class="text-center text-sm mt-4 text-white">
+            Des technologies modernes maîtrisées pour réaliser vos projets
+            rapidement et efficacement.
+          </p>
+
+          <div
+            class="flex flex-col md:flex-row items-center justify-center mt-4 gap-8 relative w-full"
+          >
+            <div
+              class="w-full max-w-sm md:w-1/3 p-4 bg-cards border border-gray-200 rounded-lg shadow sm:p-8 dark:border-gray-700 md:transform md:hover:-translate-y-2 scroll-item opacity-0 translate-y-10 transition duration-1000 ease-out delay-1500"
+            >
+              <h4 class="mb-4 text-xl font-medium text-white">Front-Office</h4>
+              <div class="flex items-baseline text-white">
+                <span class="text-5xl font-extrabold tracking-tight"
+                  >3 ans</span
+                >
+                <span class="ms-1 text-xl font-normal text-white"
+                  >/d'expérience</span
+                >
+              </div>
+              <ul role="list" class="space-y-5 my-7">
+                <li class="flex items-center">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/html1.webp"
+                    alt="HTML icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >HTML</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/css.webp"
+                    alt="CSS icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >CSS</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/sass1.webp"
+                    alt="SASS icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >SASS</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/js.webp"
+                    alt="JavaScript icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >JavaScript</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/react1.webp"
+                    alt="React icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >React JS</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/nextjs.webp"
+                    alt="Next.js icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >Next JS</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/vuejs.webp"
+                    alt="Vue.js icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >Vue JS</span
+                  >
+                </li>
+              </ul>
+              <button
+                type="button"
+                class="text-white bg-orangeColor hover:bg-orangeColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
+              >
+                Prêt à l'emploi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="w-full max-w-sm md:w-1/3 p-4 bg-cards border-4 border-orangeColor rounded-lg shadow sm:p-8 dark:border-orangeColor md:transform md:-translate-y-4 md:hover:-translate-y-6 transition-transform duration-300 md:z-10 scroll-item opacity-0 translate-y-10 transition duration-600 ease-out"
+            >
+              <h4 class="mb-4 text-xl font-medium text-white">Back-Office</h4>
+              <div class="flex items-baseline text-white">
+                <span class="text-5xl font-extrabold tracking-tight"
+                  >2 ans</span
+                >
+                <span class="ms-1 text-xl font-normal text-white"
+                  >/d'expérience</span
+                >
+              </div>
+              <ul role="list" class="space-y-5 my-7">
+                <li class="flex items-center">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/php1.webp"
+                    alt="HTML icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >PHP</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/mysql1.webp"
+                    alt="CSS icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >MySQL</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/node1.webp"
+                    alt="SASS icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >Node JS</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/symfony.webp"
+                    alt="React icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >Symfony</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/laravel.webp"
+                    alt="Vue.js icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >Laravel</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/mongodb1.webp"
+                    alt="Vue.js icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >MongoDB</span
+                  >
+                </li>
+              </ul>
+              <button
+                type="button"
+                class="text-white bg-orangeColor hover:bg-orangeColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
+              >
+                Prêt à l'emploi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="w-full max-w-sm md:w-1/3 p-4 bg-cards border border-gray-200 rounded-lg shadow sm:p-8 dark:border-gray-700 md:transform md:hover:-translate-y-2 scroll-item opacity-0 translate-y-10 transition duration-1000 ease-out delay-1000"
+            >
+              <h4 class="mb-4 text-xl font-medium text-white">Tools</h4>
+              <div class="flex items-baseline text-white">
+                <span class="text-5xl font-extrabold tracking-tight"
+                  >2 ans</span
+                >
+                <span class="ms-1 text-xl font-normal text-white"
+                  >/d'expérience</span
+                >
+              </div>
+              <ul role="list" class="space-y-5 my-7">
+                <li class="flex items-center">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/wordpress1.webp"
+                    alt="HTML icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >WordPress</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/flutter.webp"
+                    alt="CSS icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >Flutter</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/git.webp"
+                    alt="SASS icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >Git</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/seo1.webp"
+                    alt="React icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >SEO</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/tailwindcss.webp"
+                    alt="Vue.js icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >Tailwindcss</span
+                  >
+                </li>
+                <li class="flex">
+                  <img
+                    class="flex-shrink-0 w-4 h-4"
+                    src="frontoffice/asset/img/typescript.webp"
+                    alt="Vue.js icon"
+                  />
+                  <span
+                    class="text-base font-normal leading-tight text-white ms-3"
+                    >TypeScript</span
+                  >
+                </li>
+              </ul>
+              <button
+                type="button"
+                class="text-white bg-orangeColor hover:bg-orangeColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
+              >
+                Prêt à l'emploi
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          class="flex flex-col items-center justify-center mt-8 border border-gray-800 h-[800px] background-pattern"
+        >
+          <h3
+            id="section-contact"
+            class="text-sm text-center text-white scroll-item opacity-0 translate-y-10 transition duration-700 ease-out"
+          >
+            Envie de discuter ou de collaborer ?
+          </h3>
+          <p
+            class="text-center text-xl mt-4 text-white md:text-5xl md:w-2/3 scroll-item opacity-0 translate-y-10 transition duration-1000 ease-in-out"
+          >
+            Retrouvez-moi par mail ou sur mes réseaux sociaux pour échanger et
+            donner vie à <em>vos projets</em>. Je suis toujours prêt à relever
+            de <em>nouveaux défis</em> !
+          </p>
+          <div class="flex flex-wrap items-center justify-center mt-4 gap-4">
+            <a
+              href="mailto:killianjeuffroy@gmail.com"
+              class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+            >
+              Mail
+              <svg
+                class="arrow-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="7" x2="17" y2="17"></line>
+                <polyline points="17 7 17 17 7 17"></polyline>
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/killian-jeuffroy"
+              class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+            >
+              Linkedin
+              <svg
+                class="arrow-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="7" x2="17" y2="17"></line>
+                <polyline points="17 7 17 17 7 17"></polyline>
+              </svg>
+            </a>
+            <a
+              href="https://github.com/killianx45"
+              class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+            >
+              Github
+              <svg
+                class="arrow-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="7" x2="17" y2="17"></line>
+                <polyline points="17 7 17 17 7 17"></polyline>
+              </svg>
+            </a>
+            <a
+              href="frontoffice/asset/img/cv_jeuffroy_killian.pdf"
+              target="_blank"
+              class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+            >
+              CV
+              <svg
+                class="arrow-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="7" y1="7" x2="17" y2="17"></line>
+                <polyline points="17 7 17 17 7 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <div class="flex justify-center items-center h-16 text-white">
+        <p class="text-sm text-center">
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Portfolio de Killian Jeuffroy. Tous droits réservés -
+          <a href="mentions-legales.html" class="text-white">
+            Mentions légales</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"
+      defer
+    ></script>
+    <script src="frontoffice/asset/js/app.js" defer></script>
+  </body>
+</html>
