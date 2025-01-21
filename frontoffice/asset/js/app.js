@@ -80,9 +80,9 @@ document.querySelectorAll(".project-image").forEach((image) => {
         popup.innerHTML = `
           <span class="popup-close">&times;</span>
           <div class="content-popup">
-            <video class="img-popup" autoplay loop>
+            <video class="img-popup" autoplay muted playsinline loop>
               <source src="${projetData.video}" type="video/mp4">
-              Your browser does not support the video tag.
+              Votre navigateur ne supporte pas les vidéos.
             </video>
             <div class="text-popup">
               <h4>${projetData.titre}</h4>
