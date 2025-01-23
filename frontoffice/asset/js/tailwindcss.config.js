@@ -1,13 +1,15 @@
 tailwind.config = {
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        orangeColor: {
-          DEFAULT: "#E7780F",
-          dark: "#FFB168",
+        blueColor: {
+          DEFAULT: "#04C6FA",
+          dark: "#6EDFFA",
         },
         backgroundColor: {
-          DEFAULT: "#050505",
+          DEFAULT: "#ffffff",
+          dark: "#050505",
         },
       },
       fontFamily: {

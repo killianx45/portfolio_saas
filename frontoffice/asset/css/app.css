@@ -13,44 +13,65 @@ body.no-scroll {
   overflow: hidden;
 }
 
-.bg-backgroundColor {
-  background-color: #050505;
+:root {
+  --blueColor: #6edffa;
+  --blueColor-dark: #04c6fa;
+  --backgroundColor: #ffffff;
+  --backgroundColor-dark: #050505;
 }
-.text-white {
-  color: white;
+
+.bg-backgroundColor {
+  background-color: var(--backgroundColor);
+}
+
+.bg-backgroundColor-dark {
+  background-color: var(--backgroundColor-dark);
+}
+
+.dark .bg-backgroundColor {
+  background-color: var(--backgroundColor-dark);
 }
 
 /* Composants réutilisables */
 .btn-degrader {
-  background: radial-gradient(50% 50% at 50% 100%, #ffb168 0%, #e7780f 100%);
+  background: radial-gradient(
+    50% 50% at 50% 100%,
+    var(--blueColor) 0%,
+    var(--blueColor-dark) 100%
+  );
 }
 
 .color-degrader {
-  background: radial-gradient(80% 80% at 80% 100%, #ffb168 80%, #e7780f 100%);
+  background: radial-gradient(
+    80% 80% at 80% 100%,
+    var(--blueColor) 80%,
+    var(--blueColor-dark) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 }
 
-.btn-black {
+.btn-dark {
   background: radial-gradient(
     66% 93% at 48% 0%,
-    rgb(33, 33, 33) 0%,
-    rgb(5, 5, 5) 76%
+    var(--backgroundColor) 0%,
+    var(--backgroundColor-dark) 76%
   );
 }
 
 .bg-cards {
   background: radial-gradient(
     75% 32.81392308321177% at -5.7% -5%,
-    #212121 0%,
-    rgb(5, 5, 5) 100%
+    var(--backgroundColor) 0%,
+    var(--backgroundColor-dark) 100%
   );
+  border-radius: 10px;
 }
 
 em {
-  color: #e7780f;
+  color: var(--blueColor);
   font-style: normal;
 }
 
@@ -113,7 +134,7 @@ em {
 }
 
 .content-popup {
-  background: #191919;
+  background: var(--backgroundColor);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
@@ -126,6 +147,10 @@ em {
   max-height: 80vh;
 }
 
+.dark .content-popup {
+  background: #191919;
+}
+
 .img-popup {
   width: 100%;
   max-height: 50%;
@@ -136,13 +161,17 @@ em {
 }
 
 .text-popup {
-  color: white;
+  color: var(--backgroundColor-dark);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 0 1rem;
   flex: 1;
   min-height: 0;
+}
+
+.dark .text-popup {
+  color: var(--backgroundColor);
 }
 
 .text-popup h4 {
@@ -161,10 +190,10 @@ em {
 }
 
 .text-popup a {
-  color: white;
+  color: var(--backgroundColor-dark);
   font-size: 16px;
   text-decoration: none;
-  border: white 2px solid;
+  border: #191919 2px solid;
   padding: 8px 16px;
   border-radius: 16px;
   display: inline-block;
@@ -174,7 +203,17 @@ em {
   margin-bottom: 0.5rem;
 }
 
+.dark .text-popup a {
+  color: var(--backgroundColor);
+  border: white 2px solid;
+}
+
 .text-popup a:hover {
+  background: #191919;
+  color: white;
+}
+
+.dark .text-popup a:hover {
   background: white;
   color: #191919;
 }
@@ -249,9 +288,13 @@ em {
 }
 
 .background-pattern {
-  background-color: #050505;
+  background-color: var(--backgroundColor);
   position: relative;
   z-index: 0;
+}
+
+.dark .background-pattern {
+  background-color: var(--backgroundColor-dark);
 }
 
 .background-pattern::before {
@@ -262,7 +305,10 @@ em {
   transform: translate(-50%, -50%);
   width: 80%;
   height: 80%;
-  background-image: radial-gradient(#e7780f 0.8px, #050505 0.8px);
+  background-image: radial-gradient(
+    var(--blueColor-dark) 0.8px,
+    var(--backgroundColor) 0.8px
+  );
   background-size: 16px 16px;
   opacity: 0.5;
   mask-image: linear-gradient(
@@ -294,6 +340,13 @@ em {
     transparent
   );
   z-index: -1;
+}
+
+.dark .background-pattern::before {
+  background-image: radial-gradient(
+    var(--blueColor) 0.8px,
+    var(--backgroundColor-dark) 0.8px
+  );
 }
 
 @media screen and (min-width: 768px) {
@@ -367,12 +420,12 @@ em {
   transition-delay: 1000ms;
 }
 
-.delay-1500 {
-  transition-delay: 1500ms;
+.delay-650 {
+  transition-delay: 650ms;
 }
 
-.delay-2000 {
-  transition-delay: 2000ms;
+.delay-800 {
+  transition-delay: 800ms;
 }
 
 .card-front-office {
@@ -392,9 +445,12 @@ em {
   transform: translate(-50%, -50%) rotate(-5deg);
   width: 100%;
   height: 100%;
-  background-color: #050505;
+  background-color: var(--backgroundColor);
   opacity: 0.8;
-  background-image: radial-gradient(#e7780f 0.8px, #050505 0.8px);
+  background-image: radial-gradient(
+    var(--blueColor-dark) 0.8px,
+    var(--backgroundColor) 0.8px
+  );
   background-size: 16px 16px;
   mask-image: linear-gradient(
       to right,
@@ -416,6 +472,13 @@ em {
   -webkit-mask-composite: source-in;
   z-index: -1;
   opacity: 0.4;
+}
+
+.dark .about-pattern::before {
+  background-image: radial-gradient(
+    var(--blueColor) 0.8px,
+    var(--backgroundColor-dark) 0.8px
+  );
 }
 
 @media screen and (min-width: 768px) {
@@ -439,9 +502,12 @@ em {
   transform: translate(-50%, -50%) rotate(5deg);
   width: 100%;
   height: 100%;
-  background-color: #050505;
+  background-color: var(--backgroundColor);
   opacity: 0.8;
-  background-image: radial-gradient(#e7780f 0.8px, #050505 0.8px);
+  background-image: radial-gradient(
+    var(--blueColor-dark) 0.8px,
+    var(--backgroundColor) 0.8px
+  );
   background-size: 16px 16px;
   mask-image: linear-gradient(
       to right,
@@ -463,6 +529,13 @@ em {
   -webkit-mask-composite: source-in;
   z-index: -1;
   opacity: 0.4;
+}
+
+.dark .projects-pattern::before {
+  background-image: radial-gradient(
+    var(--blueColor) 0.8px,
+    var(--backgroundColor-dark) 0.8px
+  );
 }
 
 @media screen and (min-width: 768px) {
