@@ -14,7 +14,7 @@ body.no-scroll {
 }
 
 :root {
-  --blueColor: #6edffa;
+  --blueColor: #337bef;
   --blueColor-dark: #04c6fa;
   --backgroundColor: #ffffff;
   --backgroundColor-dark: #050505;
@@ -36,8 +36,8 @@ body.no-scroll {
 .btn-degrader {
   background: radial-gradient(
     50% 50% at 50% 100%,
-    var(--blueColor) 0%,
-    var(--blueColor-dark) 100%
+    var(--blueColor-dark) 0%,
+    var(--blueColor) 100%
   );
 }
 
@@ -54,20 +54,11 @@ body.no-scroll {
 }
 
 .btn-dark {
-  background: radial-gradient(
-    66% 93% at 48% 0%,
-    var(--backgroundColor) 0%,
-    var(--backgroundColor-dark) 76%
-  );
+  background: radial-gradient(80% 80% at 20% 20%, #252525 0%, #191919 100%);
 }
 
 .bg-cards {
-  background: radial-gradient(
-    75% 32.81392308321177% at -5.7% -5%,
-    var(--backgroundColor) 0%,
-    var(--backgroundColor-dark) 100%
-  );
-  border-radius: 10px;
+  background: radial-gradient(80% 80% at 20% 20%, #252525 0%, #191919 100%);
 }
 
 em {

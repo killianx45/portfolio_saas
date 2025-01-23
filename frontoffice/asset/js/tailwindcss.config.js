@@ -4,7 +4,8 @@ tailwind.config = {
     extend: {
       colors: {
         blueColor: {
-          DEFAULT: "#04C6FA",
+          // DEFAULT: "#04C6FA",
+          DEFAULT: "#337BEF",
           dark: "#6EDFFA",
         },
         backgroundColor: {
