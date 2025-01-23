@@ -1,5 +1,26 @@
 "use strict";
 
+const scrollItems = document.querySelectorAll(".scroll-item");
+
+const observerOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+scrollItems.forEach((item) => {
+  observer.observe(item);
+});
+
 const lien = document.querySelectorAll('a[href^="#"]');
 
 lien.forEach((link) => {
@@ -18,11 +39,78 @@ function toggleNavbar() {
   navbar.classList.toggle("rounded-full");
 }
 
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("#navbar-cta a");
+
+const navObserverOptions = {
+  root: null,
+  rootMargin: "-50% 0px",
+  threshold: 0,
+};
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navLinks.forEach((link) => {
+        link.classList.remove("text-blueColor", "lg:text-blueColor");
+        link.classList.add(
+          "text-black",
+          "dark:text-white",
+          "lg:hover:text-blueColor"
+        );
+      });
+
+      const activeLink = document.querySelector(
+        `#navbar-cta a[href="#${entry.target.id}"]`
+      );
+      if (activeLink) {
+        activeLink.classList.remove(
+          "text-black",
+          "dark:text-white",
+          "lg:hover:text-blueColor"
+        );
+        activeLink.classList.add("text-blueColor", "lg:text-blueColor");
+      }
+    }
+  });
+}, navObserverOptions);
+
+sections.forEach((section) => {
+  navObserver.observe(section);
+});
+
+const header = document.querySelector("header");
+const homeLink = document.querySelector('#navbar-cta a[href="#home"]');
+
+const headerObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      navLinks.forEach((link) => {
+        link.classList.remove("text-blueColor", "lg:text-blueColor");
+        link.classList.add(
+          "text-black",
+          "dark:text-white",
+          "lg:hover:text-blueColor"
+        );
+      });
+
+      homeLink.classList.remove(
+        "text-black",
+        "dark:text-white",
+        "lg:hover:text-blueColor"
+      );
+      homeLink.classList.add("text-blueColor", "lg:text-blueColor");
+    }
+  });
+}, navObserverOptions);
+
+headerObserver.observe(header);
+
 const projet = {
   projet1: {
     titre: "Site web judo club d'ascoux",
     description:
-      "Un site dynamique en HTML, CSS et JavaScript pour consulter les horaires et contacts du club de judo local.",
+      "Un site dynamique conçu en HTML, CSS et JavaScript pour promouvoir l'association de judo de mon père. Il permet de consulter facilement les horaires et les informations de contact, tout en reflétant l'identité et les activités du club.",
     image: "frontoffice/asset/img/judo.webp",
     lien: "https://github.com/killianx45/website_ascoux_judoclub",
     video: "frontoffice/asset/videos/ascoux_judoclub_video.webm",
@@ -30,7 +118,7 @@ const projet = {
   projet2: {
     titre: "Jeu Snake",
     description:
-      "Un projet en HTML et JavaScript utilisant le Canvas pour recréer le classique jeu Snake, permettant de maîtriser les éléments JavaScript et l'API Canvas pour des animations interactives.",
+      "Un remake interactif du jeu classique Snake développé en HTML et JavaScript avec l'API Canvas. Ce projet m'a permis de comprendre les fondamentaux de Canvas et de créer des animations dynamiques et immersives.",
     image: "frontoffice/asset/img/snake.webp",
     lien: "https://killianx45.github.io/snake/",
     video: "frontoffice/asset/videos/snake_video.webm",
@@ -38,7 +126,7 @@ const projet = {
   projet3: {
     titre: "Blog en Symfony",
     description:
-      "Un blog interactif développé avec Symfony, permettant la publication d'articles, l'ajout de notes, et intégrant un système de connexion sécurisé, le tout basé sur une base de données fournie par le client.",
+      "Un blog interactif réalisé pour apprendre les bases de Symfony et enrichir mon expérience en développement backend. Ce projet inclut la publication d'articles, des notations, et un système d'authentification sécurisé, tout en se basant sur une base de données fournie par le client.",
     image: "frontoffice/asset/img/blog_symfony.webp",
     lien: "https://github.com/killianx45/projet_symfony",
     video: "frontoffice/asset/videos/blog_symfony_video.webm",
@@ -46,7 +134,7 @@ const projet = {
   projet4: {
     titre: "Cinémathèque de France",
     description:
-      "Un site web interactif développé avec React, Node.js et MongoDB, offrant une consultation complète des films disponibles, enrichie de fonctionnalités avancées pour les utilisateurs.",
+      "Projet scolaire développé pour explorer React, Node.js, TailwindCSS et MongoDB. Ce site interactif permet aux utilisateurs de consulter un catalogue de films et intègre des fonctionnalités avancées d'interaction et de gestion des API.",
     image: "frontoffice/asset/img/cinetheque_react.webp",
     lien: "https://github.com/killianx45/projetfilerouge_b2d_cinetheque",
     video: "frontoffice/asset/videos/cinetheque_video.webm",
@@ -54,7 +142,7 @@ const projet = {
   projet5: {
     titre: "Application chronomètre en Flutter",
     description:
-      "Une application mobile basique développée en Flutter pour s'initier au développement d'applications, proposant un chronomètre intuitif avec des fonctionnalités réduites au minimum.",
+      "Première incursion dans le développement mobile, cette application Flutter propose un chronomètre simple et efficace, conçue pour apprendre les bases de Flutter et le développement d'UI réactives.",
     image: "frontoffice/asset/img/stopwatch.webp",
     lien: "https://github.com/killianx45/stopwatch",
     video: "frontoffice/asset/videos/stopwatch_video.webm",
@@ -87,7 +175,7 @@ document.querySelectorAll(".project-image").forEach((image) => {
             <div class="text-popup">
               <h4>${projetData.titre}</h4>
               <p>${projetData.description}</p>
-              <a class="link-projet" href="${projetData.lien}" target="_blank" aria-label="${projetData.titre}" rel="noopener">Voir le projet</a>
+              <a class="link-projet" href="${projetData.lien}" target="_blank" aria-label="${projetData.titre}" rel="noopener">Voir le code</a>
             </div>
           </div>`;
         popup.style.display = "flex";
@@ -112,24 +200,43 @@ document.querySelectorAll(".project-image").forEach((image) => {
   });
 });
 
-const scrollItems = document.querySelectorAll(".scroll-item");
+// Gestion du thème clair/sombre
+var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
 
-const observerOptions = {
-  root: null, // Utilise le viewport
-  rootMargin: "0px",
-  threshold: 0.1, // 10% de l'élément visible
-};
+// Par défaut en mode clair
+if (localStorage.getItem("color-theme") === "dark") {
+  themeToggleLightIcon.classList.remove("hidden");
+  document.documentElement.classList.add("dark");
+} else {
+  themeToggleDarkIcon.classList.remove("hidden");
+  document.documentElement.classList.remove("dark");
+  localStorage.setItem("color-theme", "light");
+}
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target); // Arrête d'observer une fois visible
+var themeToggleBtn = document.getElementById("theme-toggle");
+
+themeToggleBtn.addEventListener("click", function () {
+  // toggle icons inside button
+  themeToggleDarkIcon.classList.toggle("hidden");
+  themeToggleLightIcon.classList.toggle("hidden");
+
+  // if set via local storage previously
+  if (localStorage.getItem("color-theme")) {
+    if (localStorage.getItem("color-theme") === "light") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
     }
-  });
-}, observerOptions);
-
-// Observer chaque élément
-scrollItems.forEach((item) => {
-  observer.observe(item);
+  } else {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
+    }
+  }
 });

@@ -49,11 +49,11 @@
     <link rel="preload" href="frontoffice/asset/css/app.css" as="style" />
   </head>
   <body
-    class="bg-backgroundColor dark:bg-backgroundColor text-white overflow-x-hidden"
+    class="bg-backgroundColor dark:bg-backgroundColor-dark overflow-x-hidden"
   >
     <header id="home" class="h-[100vh]">
       <nav
-        class="bg-backgroundColor border border-gray-700 rounded-full max-w-4xl mx-auto mt-8 text-white fixed top-0 left-1/2 transform -translate-x-1/2 w-11/12 z-50"
+        class="bg-backgroundColor dark:bg-backgroundColor-dark border border-gray-700 rounded-full max-w-4xl mx-auto mt-8 text-black dark:text-white fixed top-0 left-1/2 transform -translate-x-1/2 w-11/12 z-50"
         id="navbar"
       >
         <div
@@ -80,7 +80,7 @@
             <button
               data-collapse-toggle="navbar-cta"
               type="button"
-              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black dark:text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700"
               aria-controls="navbar-cta"
               aria-expanded="false"
               onclick="toggleNavbar()"
@@ -108,45 +108,75 @@
             id="navbar-cta"
           >
             <ul
-              class="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-700 rounded-lg bg-backgroundColor lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-backgroundColor text-white"
+              class="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-700 rounded-lg bg-backgroundColor dark:bg-backgroundColor-dark lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white text-black dark:text-white"
             >
               <li>
                 <a
                   href="#home"
-                  class="block py-2 px-3 lg:p-0 text-white bg-orangeColor rounded lg:bg-transparent lg:text-orangeColor lg:dark:text-orangeColor-dark"
-                  aria-current="page"
+                  class="block py-2 px-3 lg:p-0 text-blueColor lg:text-blueColor"
                   >Home</a
                 >
               </li>
               <li>
                 <a
                   href="#about"
-                  class="block py-2 px-3 lg:p-0 text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-orangeColor lg:dark:hover:text-orangeColor-dark dark:text-white dark:hover:bg-gray-700 dark:hover:text-orangeColor lg:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block py-2 px-3 lg:p-0 text-black dark:text-white lg:hover:text-blueColor"
                   >Qui suis-je ?</a
                 >
               </li>
               <li>
                 <a
                   href="#projets"
-                  class="block py-2 px-3 lg:p-0 text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-orangeColor lg:dark:hover:text-orangeColor-dark dark:text-white dark:hover:bg-gray-700 dark:hover:text-orangeColor lg:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block py-2 px-3 lg:p-0 text-black dark:text-white lg:hover:text-blueColor"
                   >Réalisations</a
                 >
               </li>
               <li>
                 <a
                   href="#outils"
-                  class="block py-2 px-3 lg:p-0 text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-orangeColor lg:dark:hover:text-orangeColor-dark dark:text-white dark:hover:bg-gray-700 dark:hover:text-orangeColor lg:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block py-2 px-3 lg:p-0 text-black dark:text-white lg:hover:text-blueColor"
                   >Mes outils</a
                 >
               </li>
               <li>
                 <a
                   href="#contact"
-                  class="block py-2 px-3 lg:p-0 text-white rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-orangeColor lg:dark:hover:text-orangeColor-dark dark:text-white dark:hover:bg-gray-700 dark:hover:text-orangeColor lg:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block py-2 px-3 lg:p-0 text-black dark:text-white lg:hover:text-blueColor"
                   >Prenez contact</a
                 >
               </li>
             </ul>
+            <button
+              title="Changer le thème"
+              id="theme-toggle"
+              type="button"
+              class="text-gray-500 dark:text-gray-400 text-sm p-2.5"
+            >
+              <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+              <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
       </nav>
@@ -154,14 +184,14 @@
         class="flex flex-col items-center justify-center h-screen background-pattern"
       >
         <h1
-          class="text-3xl text-white text-center p-8 md:text-4xl lg:text-6xl lg:w-[70%] scroll-item opacity-0 translate-y-10 transition duration-1000 ease-in-out"
+          class="text-3xl text-black dark:text-white text-center p-8 md:text-4xl lg:text-6xl lg:w-[70%] scroll-item opacity-0 translate-y-10 transition duration-1000 ease-in-out"
         >
           <em>Optimisez vos plateformes avec</em> ✦ des applications back-end
           fiables. Un développeur passionné, <em>prêt à relever</em> vos défis
           numériques.
         </h1>
         <p
-          class="text-gray-300 text-center text-xs mt-4 px-4 w-[70%] scroll-item opacity-0 translate-y-10 transition duration-700 ease-out"
+          class="text-gray-700 dark:text-gray-300 text-center text-xs mt-4 px-4 w-[70%] scroll-item opacity-0 translate-y-10 transition duration-700 ease-out"
         >
           En recherche de stage de 11 semaines dès le 7 avril 2025.
         </p>
@@ -190,7 +220,7 @@
           <a
             href="frontoffice/asset/img/cv_jeuffroy_killian.pdf"
             download="cv_jeuffroy_killian.pdf"
-            class="btn-black border border-gray-700 text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon mt-4"
+            class="btn-dark border border-gray-700 text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon mt-4"
           >
             Télécharger mon CV
             <svg
@@ -214,7 +244,6 @@
     </header>
     <main>
       <article>
-        <!-- Section About -->
         <section id="about" class="section-container about-pattern">
           <div class="container mx-auto p-4">
             <div
@@ -223,31 +252,25 @@
               <div class="lg:w-1/2 flex flex-col gap-4 lg:p-4 lg:mr-8">
                 <div class="flex flex-col gap-4">
                   <h2
-                    class="text-2xl font-bold text-white lg:text-5xl scroll-item opacity-0 translate-y-10 transition duration-1200 ease-in-out"
+                    class="text-2xl font-bold text-black dark:text-white lg:text-5xl scroll-item opacity-0 translate-y-10 transition duration-1200 ease-in-out"
                   >
                     Killian <em>Jeuffroy</em>
                   </h2>
-                  <h3 class="text-white lg:text-2xl">
+                  <h3 class="text-black dark:text-white lg:text-2xl">
                     Développeur web -
                     <em class="font-bold">spécialisé en backend</em>
                   </h3>
                 </div>
-                <p class="text-white lg:text-lg">
+                <p class="text-black dark:text-white lg:text-lg">
                   Étudiant en 2ᵉ année de BUT Métiers du Multimédia et de
                   l'Internet (MMI) à l'IUT de Blois, je suis passionné par les
-                  <em>nouvelles technologies</em> et le développement backend.
-                  Cette formation polyvalente m'a permis d'allier technologie et
-                  créativité à travers de nombreux projets académiques et
-                  personnels, renforçant ainsi mes
-                  <em>compétences techniques</em>.
-                </p>
-                <p class="text-white lg:text-lg">
-                  Je recherche un
-                  <em>stage de 11 semaines à partir du 7 avril 2025</em> pour
-                  intégrer une équipe dynamique et travailler sur des projets
-                  innovants. Je suis motivé à contribuer activement tout en
-                  poursuivant mon apprentissage dans un
-                  <em>environnement stimulant</em>.
+                  nouvelles technologies et le développement backend. Cette
+                  formation m'a permis d'allier
+                  <em>technologie et créativité</em> à travers divers projets,
+                  consolidant mes compétences techniques. Motivé et curieux, je
+                  souhaite intégrer une équipe dynamique pour travailler sur des
+                  <em>projets innovants</em> et enrichir mes connaissances dans
+                  un environnement stimulant.
                 </p>
               </div>
               <img
@@ -260,7 +283,6 @@
           </div>
         </section>
 
-        <!-- Section Projets -->
         <section
           id="projets"
           aria-labelledby="section-projets"
@@ -269,7 +291,7 @@
           <div class="container mx-auto p-4">
             <h3
               id="section-projets"
-              class="text-sm text-center mt-4 text-white lg:text-2xl"
+              class="text-sm text-center mt-4 text-black dark:text-white lg:text-2xl"
             >
               Découvrez mon parcours en code
             </h3>
@@ -370,7 +392,9 @@
             </div>
 
             <div class="popup">
-              <span class="popup-close text-white">&times;</span>
+              <span class="popup-close text-black dark:text-white"
+                >&times;</span
+              >
               <div class="content-popup">
                 <video
                   src="frontoffice/asset/videos/blog_symfony_video.webm"
@@ -379,19 +403,19 @@
                   loop
                 ></video>
                 <div class="text-popup">
-                  <h4 class="text-white">Site de Judo</h4>
-                  <p class="text-white">
+                  <h4 class="text-black dark:text-white">Site de Judo</h4>
+                  <p class="text-black dark:text-white">
                     Site de Judo réalisé en HTML, CSS et JavaScript. Ce site a
                     été réalisé dans le cadre de ma formation en développement
                     web.
                   </p>
                   <a
-                    class="link-projet text-white"
+                    class="link-projet text-black dark:text-white"
                     href="https://killianx45.github.io/website_ascoux_judoclub/"
                     target="_blank"
                     aria-label="Site de Judo"
                     rel="noopener"
-                    >Voir le projet</a
+                    >Voir le code</a
                   >
                 </div>
               </div>
@@ -402,10 +426,13 @@
         <!-- Section Outils -->
         <section id="outils" class="section-container">
           <div class="container mx-auto p-4">
-            <h3 id="section-outils" class="text-2xl text-center text-white">
+            <h3
+              id="section-outils"
+              class="text-2xl text-center text-black dark:text-white"
+            >
               Des compétences solides et adaptées à vos projets
             </h3>
-            <p class="text-center text-sm mt-4 text-white">
+            <p class="text-center text-sm mt-4 text-black dark:text-white">
               Des technologies modernes maîtrisées pour réaliser vos projets
               rapidement et efficacement.
             </p>
@@ -414,7 +441,7 @@
               class="flex flex-col lg:flex-row items-center justify-center mt-4 gap-8 relative w-full"
             >
               <div
-                class="w-full max-w-sm lg:w-1/3 p-4 bg-cards border border-gray-200 rounded-lg shadow sm:p-8 dark:border-gray-700 lg:transform scroll-item opacity-0 translate-y-10 transition duration-1000 ease-out delay-1500"
+                class="w-full max-w-sm lg:w-1/3 bg-cards border border-gray-200 rounded-lg shadow-sm p-8 dark:border-gray-700 lg:transform scroll-item opacity-0 translate-y-10 transition duration-1000 ease-out delay-800"
               >
                 <h4 class="mb-4 text-xl font-medium text-white">
                   Front-Office
@@ -508,7 +535,7 @@
                 </ul>
                 <a
                   href="#contact"
-                  class="text-white bg-orangeColor hover:bg-orangeColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
+                  class="text-white bg-blueColor hover:bg-blueColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
                 >
                   Prêt à l'emploi
                   <svg
@@ -529,109 +556,118 @@
               </div>
 
               <div
-                class="w-full max-w-sm lg:w-1/3 p-4 bg-cards border-4 border-orangeColor rounded-lg shadow sm:p-8 dark:border-orangeColor lg:transform lg:-translate-y-4 lg:hover:-translate-y-6 transition-transform duration-300 lg:z-10 scroll-item opacity-0 translate-y-10 transition duration-600 ease-out"
+                class="w-full max-w-xl mt-4 lg:w-1/3 bg-cards border-4 border-blueColor rounded-lg shadow-sm p-8 dark:border-blueColor lg:transform lg:-translate-y-4 lg:hover:-translate-y-6 transition-transform duration-300 lg:z-10 scroll-item opacity-0 translate-y-10 transition duration-400 ease-out"
               >
-                <h4 class="mb-4 text-xl font-medium text-white">Back-Office</h4>
-                <div class="flex items-baseline text-white">
-                  <span class="text-5xl font-extrabold tracking-tight"
-                    >2 ans</span
-                  >
-                  <span class="ms-1 text-xl font-normal text-white"
-                    >/d'expérience</span
-                  >
-                </div>
-                <ul class="space-y-5 my-7">
-                  <li class="flex items-center">
-                    <img
-                      class="flex-shrink-0 w-4 h-4"
-                      src="frontoffice/asset/img/php1.webp"
-                      alt="HTML icon"
-                    />
-                    <span
-                      class="text-base font-normal leading-tight text-white ms-3"
-                      >PHP</span
-                    >
-                  </li>
-                  <li class="flex">
-                    <img
-                      class="flex-shrink-0 w-4 h-4"
-                      src="frontoffice/asset/img/mysql1.webp"
-                      alt="CSS icon"
-                    />
-                    <span
-                      class="text-base font-normal leading-tight text-white ms-3"
-                      >MySQL</span
-                    >
-                  </li>
-                  <li class="flex">
-                    <img
-                      class="flex-shrink-0 w-4 h-4"
-                      src="frontoffice/asset/img/node1.webp"
-                      alt="SASS icon"
-                    />
-                    <span
-                      class="text-base font-normal leading-tight text-white ms-3"
-                      >Node JS</span
-                    >
-                  </li>
-                  <li class="flex">
-                    <img
-                      class="flex-shrink-0 w-4 h-4"
-                      src="frontoffice/asset/img/symfony.webp"
-                      alt="React icon"
-                    />
-                    <span
-                      class="text-base font-normal leading-tight text-white ms-3"
-                      >Symfony</span
-                    >
-                  </li>
-                  <li class="flex">
-                    <img
-                      class="flex-shrink-0 w-4 h-4"
-                      src="frontoffice/asset/img/laravel.webp"
-                      alt="Vue.js icon"
-                    />
-                    <span
-                      class="text-base font-normal leading-tight text-white ms-3"
-                      >Laravel</span
-                    >
-                  </li>
-                  <li class="flex">
-                    <img
-                      class="flex-shrink-0 w-4 h-4"
-                      src="frontoffice/asset/img/mongodb1.webp"
-                      alt="Vue.js icon"
-                    />
-                    <span
-                      class="text-base font-normal leading-tight text-white ms-3"
-                      >MongoDB</span
-                    >
-                  </li>
-                </ul>
-                <a
-                  href="#contact"
-                  class="text-white bg-orangeColor hover:bg-orangeColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
+                <p class="text-blueColor text-sm text-muted-foreground mb-2">
+                  Backoffice : l'incontournable pour vos projets.
+                </p>
+                <div
+                  class="w-full lg:p-4 bg-cards rounded-lg shadow-sm p-8 dark:border-blueColor"
                 >
-                  Prêt à l'emploi
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                  <h4 class="mb-4 text-xl font-medium text-white">
+                    Back-Office
+                  </h4>
+                  <div class="flex items-baseline text-white">
+                    <span class="text-5xl font-extrabold tracking-tight"
+                      >2 ans</span
+                    >
+                    <span class="ms-1 text-xl font-normal text-white"
+                      >/d'expérience</span
+                    >
+                  </div>
+                  <ul class="space-y-5 my-7">
+                    <li class="flex items-center">
+                      <img
+                        class="flex-shrink-0 w-4 h-4"
+                        src="frontoffice/asset/img/php1.webp"
+                        alt="HTML icon"
+                      />
+                      <span
+                        class="text-base font-normal leading-tight text-white ms-3"
+                        >PHP</span
+                      >
+                    </li>
+                    <li class="flex">
+                      <img
+                        class="flex-shrink-0 w-4 h-4"
+                        src="frontoffice/asset/img/mysql1.webp"
+                        alt="CSS icon"
+                      />
+                      <span
+                        class="text-base font-normal leading-tight text-white ms-3"
+                        >MySQL</span
+                      >
+                    </li>
+                    <li class="flex">
+                      <img
+                        class="flex-shrink-0 w-4 h-4"
+                        src="frontoffice/asset/img/node1.webp"
+                        alt="SASS icon"
+                      />
+                      <span
+                        class="text-base font-normal leading-tight text-white ms-3"
+                        >Node JS</span
+                      >
+                    </li>
+                    <li class="flex">
+                      <img
+                        class="flex-shrink-0 w-4 h-4"
+                        src="frontoffice/asset/img/symfony.webp"
+                        alt="React icon"
+                      />
+                      <span
+                        class="text-base font-normal leading-tight text-white ms-3"
+                        >Symfony</span
+                      >
+                    </li>
+                    <li class="flex">
+                      <img
+                        class="flex-shrink-0 w-4 h-4"
+                        src="frontoffice/asset/img/laravel.webp"
+                        alt="Vue.js icon"
+                      />
+                      <span
+                        class="text-base font-normal leading-tight text-white ms-3"
+                        >Laravel</span
+                      >
+                    </li>
+                    <li class="flex">
+                      <img
+                        class="flex-shrink-0 w-4 h-4"
+                        src="frontoffice/asset/img/mongodb1.webp"
+                        alt="Vue.js icon"
+                      />
+                      <span
+                        class="text-base font-normal leading-tight text-white ms-3"
+                        >MongoDB</span
+                      >
+                    </li>
+                  </ul>
+                  <a
+                    href="#contact"
+                    class="text-white bg-blueColor hover:bg-blueColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
                   >
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </a>
+                    Prêt à l'emploi
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
               </div>
 
               <div
-                class="w-full max-w-sm lg:w-1/3 p-4 bg-cards border border-gray-200 rounded-lg shadow sm:p-8 dark:border-gray-700 lg:transform scroll-item opacity-0 translate-y-10 transition duration-1000 ease-out delay-1000"
+                class="w-full max-w-sm lg:w-1/3 bg-cards border border-gray-200 rounded-lg shadow-sm p-8 dark:border-gray-700 lg:transform scroll-item opacity-0 translate-y-10 transition duration-1000 ease-out delay-650"
               >
                 <h4 class="mb-4 text-xl font-medium text-white">Tools</h4>
                 <div class="flex items-baseline text-white">
@@ -712,7 +748,7 @@
                 </ul>
                 <a
                   href="#contact"
-                  class="text-white bg-orangeColor hover:bg-orangeColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
+                  class="text-white bg-blueColor hover:bg-blueColorDark font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center items-center gap-2"
                 >
                   Prêt à l'emploi
                   <svg
@@ -735,7 +771,6 @@
           </div>
         </section>
 
-        <!-- Section Contact -->
         <section
           id="contact"
           class="section-container background-pattern border border-gray-700 w-4/5 mx-auto"
@@ -743,21 +778,21 @@
           <div class="container mx-auto p-4">
             <h3
               id="section-contact"
-              class="text-sm text-center text-white scroll-item opacity-0 translate-y-10 transition duration-700 ease-out"
+              class="text-sm text-center text-black dark:text-white scroll-item opacity-0 translate-y-10 transition duration-700 ease-out"
             >
               Envie de discuter ou de collaborer ?
             </h3>
             <p
-              class="text-center text-xl mt-4 text-white lg:text-5xl lg:w-2/3 mx-auto scroll-item opacity-0 translate-y-10 transition duration-1000 ease-in-out"
+              class="text-center text-xl mt-4 text-black dark:text-white lg:text-6xl lg:w-[60%] mx-auto scroll-item opacity-0 translate-y-10 transition duration-1000 ease-in-out"
             >
-              Retrouvez-moi par mail ou sur mes réseaux sociaux pour échanger et
-              donner vie à <em>vos projets</em>. Je suis toujours prêt à relever
-              de <em>nouveaux défis</em> !
+              <em>Contactez-moi</em> par mail ou sur mes réseaux pour donner vie
+              à <em>vos projets</em>. ✦ Toujours prêt pour de
+              <em>nouveaux défis</em> !
             </p>
             <div class="flex flex-wrap items-center justify-center mt-4 gap-4">
               <a
                 href="mailto:killianjeuffroy@gmail.com"
-                class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+                class="btn-degrader text-black dark:text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
               >
                 Mail
                 <svg
@@ -778,7 +813,7 @@
               </a>
               <a
                 href="https://www.linkedin.com/in/killian-jeuffroy"
-                class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+                class="btn-degrader text-black dark:text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
               >
                 Linkedin
                 <svg
@@ -799,7 +834,7 @@
               </a>
               <a
                 href="https://github.com/killianx45"
-                class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+                class="btn-degrader text-black dark:text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
               >
                 Github
                 <svg
@@ -821,7 +856,7 @@
               <a
                 href="frontoffice/asset/img/cv_jeuffroy_killian.pdf"
                 target="_blank"
-                class="btn-degrader text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
+                class="btn-degrader text-black dark:text-white px-4 py-2 rounded-md flex items-center gap-2 svg-icon"
               >
                 CV
                 <svg
@@ -846,13 +881,15 @@
       </article>
     </main>
     <footer>
-      <div class="flex justify-center items-center h-16 text-white p-2">
+      <div
+        class="flex justify-center items-center h-16 text-black dark:text-white p-2"
+      >
         <p class="text-sm text-center">
           <script>
             document.write(new Date().getFullYear());
           </script>
           Portfolio de Killian Jeuffroy. Tous droits réservés -
-          <a href="mentions-legales.html" class="text-white">
+          <a href="mentions-legales.html" class="text-black dark:text-white">
             Mentions légales</a
           >
         </p>
